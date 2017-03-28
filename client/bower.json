@@ -1,0 +1,47 @@
+{
+  "name": "twitterishify_hr_frontend",
+  "description": "Frontend for twitterishify HR.",
+  "main": "gulpfile.js",
+  "authors": [
+    "Ahmed H. Ismail"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-mocks": "^1.5.8"
+  },
+  "dependencies": {
+    "ng-click-toggle": "^0.0.1",
+    "ng-click-remove": "^0.0.1",
+    "moment": "^2.17.1",
+    "lodash": "^4.17.2",
+    "moment-timezone": "^0.5.10",
+    "angular-material": "^1.1.1",
+    "angular": "^1.6.0",
+    "jquery": "^3.1.1",
+    "angular-messages": "^1.6.0",
+    "angular-animate": "^1.6.0",
+    "angular-aria": "^1.6.0",
+    "angular-ui-router": "^0.3.2",
+    "angular-ui-router-title": "^0.1.0",
+    "angular-local-storage": "^0.5.2",
+    "angular-moment": "^1.0.1",
+    "angular-validation-match": "^1.9.0",
+    "device.js": "^0.0.3",
+    "satellizer": "^0.15.5",
+    "angular-resource": "^1.6.3"
+  },
+  "resolutions": {
+    "angular": "^1.6.0",
+    "jquery": "^3.1.1",
+    "angular-ui-router-title": "^0.1.0"
+  }
+}

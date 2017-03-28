@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="twitter">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title data-ng-bind="($title || 'TWITTERISHIFY')"></title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <!-- Drag and drop polyfill -->
+  <script>
+    var iosDragDropShim = { enableEnterLeave: true }
+  </script>
+  <script src="polyfills/date_to_iso_string.js"></script>
+  <script src="polyfills/ios-drag-drop.js"></script>
+</head>
+<body class="hidden" data-set-translation-direction  data-remove-hidden>
+  <div data-ui-view class="wrapper" id="main-view"></div>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

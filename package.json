@@ -1,0 +1,42 @@
+{
+  "name": "twitterishify",
+  "version": "1.0.0",
+  "description": "List and tag twitter feed",
+  "main": "start_server.js",
+  "scripts": {
+    "dev": "NODE_ENV=development node run_initial_db_sync.js && sequelize db:migrate && node run_server.js",
+    "prod_server": "NODE_ENV=production node run_initial_db_sync.js && sequelize db:migrate &&  node run_server.js",
+    "migrate": "node run_initial_db_sync.js && sequelize db:migrate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ah450/twitterishify.git"
+  },
+  "author": "Ahmed H. Ismail",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ah450/twitterishify/issues"
+  },
+  "homepage": "https://github.com/ah450/twitterishify#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-jwt": "^5.1.0",
+    "express-unless": "^0.3.0",
+    "jsonwebtoken": "^7.3.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.4",
+    "sequelize-cli": "^2.7.0",
+    "twitter": "^1.7.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.2.0",
+    "sinon": "^2.1.0"
+  }
+}

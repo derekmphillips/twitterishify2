@@ -1,0 +1,110 @@
+
+.select-none {
+  user-select: none;
+}
+.clear-both {
+  clear: both;
+}
+
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.max-width {
+  width: 100%;
+}
+
+.max-height {
+  height: 100%;
+}
+
+.max-screen {
+  height: 100vh;
+  width: 100vw;
+}
+
+.center-spinner {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.padding-top {
+  padding-top: 0.5em;
+}
+
+.center-pseudo {
+  display: inline-block;
+  text-align: center;
+  &::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 0px;
+    vertical-align: middle;
+  }
+}
+
+.break-word {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+.hyphens {
+  hyphens: auto;
+}
+
+.relative {
+  position: relative;
+}
+
+@for $val from 1 through 5 {
+  .z-index-#{$val} {z-index: $val;}
+}
+
+
+.form-error, .error {
+  color: $md-clr-deep-orange-500;
+}
+
+
+.button-link {
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+
+}
+
+.numbered-list {
+  list-style: decimal;
+  & li {
+    margin-bottom: 0.3em;
+  }
+}
+
+
+.dialog-min-width {
+  min-width: 70vw;
+}
+
+
+.page-title {
+  margin: 0.45em auto 0.45em;
+  font-weight: $bold-weight;
+  width: 80%;
+  overflow: visible;
+}
+

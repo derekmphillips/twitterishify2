@@ -1,0 +1,60 @@
+<form class="signup-form" name="signupForm" data-ng-submit="signup()" data-ng-controller="SignupController" data-ng-cloak>
+  <header class="text-center">
+    <h3>Register</h3>
+  </header>
+
+  <md-input-container class="block">
+    <label>Email</label>
+    <input name="email" type="email" data-ng-model="profile.email" data-check-availability data-check-availability-endpoint="users:email_count"
+      required>
+    <div data-ng-messages="signupForm.email.$error" data-ng-show="signupForm.email.$touched">
+      <div data-ng-message="required">This field is required</div>
+      <div data-ng-message="checkAvailability">Email already in use</div>
+      <div data-ng-message="email">Invalid email format</div>
+    </div>
+    <div class="check-availability-progress" data-ng-show="signupForm.email.$pending.checkAvailability">
+      <md-progress-circular data-md-mode="indeterminate" class="md-accent" md-diameter="20"></md-progress-circular>
+      <p class="message">Checking availability</p>
+    </div>
+  </md-input-container>
+
+
+  <md-input-container class="block">
+    <label>Name</label>
+    <input name="name" type="text" data-ng-model="profile.name" required>
+    <div data-ng-messages="signupForm.name.$error" data-ng-show="signupForm.name.$touched">
+      <div data-ng-message="required">This field is required</div>
+    </div>
+  </md-input-container>
+
+
+
+  <md-input-container class="block">
+    <label>Password</label>
+    <input name="password" type="password" data-ng-model="profile.password" required data-ng-minlength="6">
+    <div data-ng-messages="signupForm.password.$error" data-ng-show="signupForm.password.$touched">
+      <div data-ng-message="required">This field is required</div>
+      <div data-ng-message="minlength">Must be at least 6 characters</div>
+    </div>
+  </md-input-container>
+
+  <md-input-container class="block">
+    <label>Password</label>
+    <input name="password_confirm" type="password" data-match-ignore-empty="true" data-ng-model="profile.password_confirm" required
+      data-match="profile.password">
+    <div data-ng-messages="signupForm.password_confirm.$error" data-ng-show="signupForm.password_confirm.$touched">
+      <div data-ng-message="required">This field is required</div>
+      <div data-ng-message="match">Passwords do not match</div>
+    </div>
+  </md-input-container>
+
+
+  <div class="flex-row-center max-width">
+    <button data-ng-disabled="signupForm.$invalid" class="contract" data-ng-class="{loading: processing}" type="submit" aria-label="signup"
+      md-ripple-size="full">
+        <span class="label">Create Account</span>
+        <i class="material-icons spinner">refresh</i>
+        </button>
+  </div>
+
+</form>

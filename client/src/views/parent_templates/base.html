@@ -1,0 +1,33 @@
+<ul class="main-nav" data-ng-controller="NavController">
+  <li data-ui-sref-active="active-state">
+    <h4><a data-ui-sref="base.landing">HOME</a></h4>
+  </li>
+
+  <li data-ui-sref-active="active-state" data-ng-if="!isLoggedIn()">
+    <h4><a data-ui-sref="base.login">LOGIN</a></h4>
+  </li>
+
+
+  <li data-ui-sref-active="active-state" data-ng-if="!isLoggedIn()">
+    <h4><a data-ui-sref="base.register">REGISTER</a></h4>
+  </li>
+
+  <li data-ui-sref-active="active-state" data-ng-if="isLoggedIn()">
+    <h4><a data-ui-sref="base.private.tweets">TWEETS</a></h4>
+  </li>
+
+  <!--<li data-ui-sref-active="active-state" data-ng-if="!isLoggedIn()">
+    <h4><a data-ui-sref="base.private.profile">PROFILE</a></h4>
+  </li>-->
+
+  <li data-ng-if="isLoggedIn()"><i></i>
+    <h4><a data-ng-click="signout()" >LOGOUT</a></h4>
+  </li>
+
+
+
+</ul>
+
+
+
+<div data-ui-view="main-content" class="relative main-content"></div>

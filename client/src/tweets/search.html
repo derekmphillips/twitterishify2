@@ -1,0 +1,13 @@
+<div data-ng-controller="SearchController">
+
+  <md-autocomplete flex required
+    md-input-name="autocompleteField"
+    md-selected-item="ctrl.selectedItem" md-search-text="ctrl.searchText"
+    md-items="item in []"
+    md-item-text="item.display"
+    md-require-match md-floating-label="Enter Screen Name i.e @name">
+    <md-item-template>
+      <span md-highlight-text="ctrl.searchText">{{item}}</span>
+    </md-item-template>
+  </md-autocomplete>
+</div>

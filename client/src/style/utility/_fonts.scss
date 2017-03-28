@@ -1,0 +1,140 @@
+$thin-weight: 100;
+$light-weight: 300;
+$normal-weight: 400;
+$bold-weight: 700;
+$ultra-bold-weight: 900;
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: $normal-weight;
+  src:  url('/fonts/MaterialIcons-Regular.woff2') format('woff2'),
+    url('/fonts/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Good Times';
+  font-style: normal;
+  font-weight: $normal-weight;
+  src: url('/fonts/good-times-rg.woff2') format('woff2'),
+    url('/fonts/good-times-rg.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: $normal-weight;
+  src: local('Montserrat-Regular'),
+   url('/fonts/Montserrat-Regular.woff2') format('woff2'),
+   url('/fonts/Montserrat-Regular.ttf') format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: $bold-weight;
+  src: local('Montserrat-Bold'),
+       url('/fonts/Montserrat-Bold.woff2') format('woff2'),
+       url('/fonts/Montserrat-Bold.ttf') format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+// Arabic lateef
+@font-face {
+  font-family: 'Lateef';
+  font-weight: $normal-weight;
+  font-style: normal;
+font-weight: $normal-weight;
+  src: local('Lateef'),
+    url('/fonts/LateefArabic.woff2') format('woff2'),
+    url('/fonts/LateefArabic.ttf') format('truetype');
+  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+FB50-FDFF, U+FE80-FEFC;
+}
+
+// Latin lateef
+@font-face {
+  font-family: 'Lateef';
+  font-style: normal;
+  font-weight: $normal-weight;
+  src: local('Lateef'),
+    url('/fonts/Montserrat-Regular.woff2') format('woff2'),
+    url('/fonts/Montserrat-Regular.ttf') format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+$proxima-nova-stack: proxima-nova, 'Montserrat', sans-serif;
+$lateef-stack: 'Lateef', cursive;
+$good-times-stack: 'Good Times', cursive;
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.good-times {
+  font-family: $good-times-stack;
+}
+
+.proxima {
+  font-family: $proxima-nova-stack;
+}
+
+.thin-weight {
+  font-weight: $thin-weight;
+}
+
+.light-weight {
+  font-weight: $light-weight;
+}
+
+.normal-weight {
+  font-weight: $normal-weight;
+}
+
+.bold-weight {
+  font-weight: $bold-weight;
+}
+
+.ultra-bold-weight {
+  font-weight: $ultra-bold-weight;
+}
+
+
+.flow-text {
+  font-weight: $normal-weight;
+  $i: 0;
+  @while $i <= $intervals {
+      @media only screen and (min-width : 360 + ($i * $interval-size)) {
+          font-size: 1.2rem * (1 + (.02 * $i));
+      }
+      $i: $i + 1;
+  }
+
+  // Handle below 360px screen
+  @media only screen and (max-width: 400px) {
+      font-size: 1.2rem;
+  }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.small {
+  font-size: 0.7em;
+}

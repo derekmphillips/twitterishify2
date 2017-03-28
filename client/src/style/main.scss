@@ -1,0 +1,163 @@
+@import "vendor/include-media";
+@import "vendor/material-color-prefixed";
+@import "utility/variables";
+@import 'utility/fonts';
+@import "utility/reset";
+@import "utility/mixins";
+@import "utility/flex";
+@import "utility/generic";
+@import "utility/display";
+@import "utility/overflow";
+
+
+body {
+    font-family: $proxima-nova-stack;
+    font-weight: $normal-weight;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background: $main-background;
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: $bold-weight;
+}
+
+
+a.active {
+    pointer-events: none;
+    cursor: default;
+}
+
+a.link {
+    display: inline-block;
+    text-decoration: underline;
+    color: $md-clr-light-blue-A200;
+    cursor: pointer;
+}
+
+.wrapper {
+    margin: 0 auto;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+    position: relative;
+}
+
+.simple-message-wrap {
+    width: 80%;
+    height: 50vh;
+    line-height: 1.8em;
+    margin: 0 auto;
+}
+
+
+svg {
+    overflow: hidden !important;
+}
+
+.main-content {
+    background: $main-background;
+    min-height: 40vh;
+    width: 90%;
+    margin: 10vh auto;
+    margin-top: 10vh;
+    margin-right: auto;
+    margin-bottom: 10vh;
+    margin-left: auto;
+}
+
+.main-nav {
+    @include display-flex();
+    @include flex-flow(row, nowrap);
+    @include justify-content(space-between);
+    box-sizing: content-box;
+    li {
+        display: block;
+        cursor: pointer;
+    }
+    width: calc(100% - 6vw);
+    min-height: 15vh;
+    margin-top: 5vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    @include flex-wrap(wrap);
+
+    a {
+        color: $md-clr-blue-500;
+    }
+
+    
+}
+
+
+.check-availability-progress {
+  width: 80%;
+  @include display-flex();
+  @include align-items(center);
+  @include flex-flow(row, nowrap);
+  @include justify-content(space-between);
+  .message {
+    font-size: .75em;
+  }
+}
+
+
+.contract, .contract-overlay {
+  &[disabled]:not(.loading) {
+    background-color: rgba(0,0,0,0.12);
+    color: rgba(0,0,0,0.26) !important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0);
+  }
+  margin: 0.4rem;
+  padding: 0.5rem;
+  min-width: 70px;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  background-color: rgb(33, 150, 243);
+  color: rgba(255, 255, 255, 0.87);
+  position: relative;
+  transition: all .3s ease;
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  display: inline-block;
+  text-transform: uppercase;
+
+  .spinner {
+    display: none;
+  }
+
+  &.loading {
+    z-index: 50;
+    width: 2em;
+    height: 2em;
+    min-width: 2em;
+    border-radius: 50%;
+    .spinner {
+      display: block;
+    }
+    .label {
+      display: none;
+    }
+  }
+
+}
+
+.contract-overlay.loading {
+  // adds overlay while loading
+  @media(min-width: 400px) {
+    box-shadow: 0px 0px 0px 200000px rgba(0,0,0,0.8);
+  }
+}
+
+

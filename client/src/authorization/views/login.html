@@ -1,0 +1,47 @@
+<form
+class="login-form"
+data-ng-submit="login()"
+data-ng-controller="LoginController"
+name="loginForm"
+data-ng-cloak
+>
+
+    <header class="text-center">
+        <h3>Login</h3>
+    </header>
+    
+    <md-input-container class="block">
+        <label>Email</label>
+        <input type="email" name="email" data-ng-model="loginData.email" required>
+        <div data-ng-messages="loginForm.password.$error"
+        data-ng-show="loginForm.password.$touched">
+            <div data-ng-message="required">Field is required</div>
+            <div data-ng-message="email">Must be valid email</div>
+        </div>
+    </md-input-container>
+
+    <md-input-container class="block">
+        <label>Password</label>
+        <input name="password" type="password" data-ng-model="loginData.password" required>
+        <div data-ng-messages="loginForm.password.$error"
+        data-ng-show="loginForm.password.$touched">
+            <div data-ng-message="required">Field is required</div>
+        </div>
+    </md-input-container>
+    <p class="form-error">{{error}}</p>
+    <div>
+        <md-checkbox data-ng-model="loginData.remember" aria-label="remember">
+            Remember Me
+        </md-checkbox>
+    </div>
+
+    <div class="flex-row-center max-width">
+        <button data-ng-disabled="loginForm.$invalid"
+        class="contract"
+        data-ng-class="{loading: processing}"
+        type="submit" aria-label="login" md-ripple-size="full">
+        <span class="label">LOGIN</span>
+        <i class="material-icons spinner">refresh</i>
+        </button>
+    </div>
+</form>

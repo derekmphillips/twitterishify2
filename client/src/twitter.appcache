@@ -1,0 +1,21 @@
+CACHE MANIFEST
+# v0.0.7
+
+CACHE:
+# MAIN assets
+app.js
+index.html
+main.css
+# Fonts
+fonts/good-times-rg.woff2
+fonts/MaterialIcons-Regular.woff2
+fonts/LateefArabic.woff2
+fonts/LateefLatin.woff2
+fonts/Montserrat-Bold.woff2
+fonts/Montserrat-Regular.woff2
+
+NETWORK:
+*
+
+FALLBACK:
+images/ images/offline.svg
